@@ -1,3 +1,25 @@
+:root{
+  --easing: linear(
+      0 0%,
+      0.1538 4.09%,
+      0.2926 8.29%,
+      0.4173 12.63%,
+      0.5282 17.12%,
+      0.6255 21.77%,
+      0.7099 26.61%,
+      0.782 31.67%,
+      0.8425 37%,
+      0.8887 42.23%,
+      0.9257 47.79%,
+      0.9543 53.78%,
+      0.9752 60.32%,
+      0.9883 67.11%,
+      0.9961 75%,
+      1 100%
+    );
+    --speed: 0.6s;
+  }
+
 body {
     font-family: system-ui, sans-serif;
     margin: 0;
@@ -44,7 +66,7 @@ body {
   
   .columna-izquierda,
   .columna-derecha {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #444;
     border-radius: 8px;
     padding: 1.5rem;
@@ -94,4 +116,223 @@ body {
       border-top: 4px solid #a00;
       margin-top: 1.5rem;
     }
+  }
+
+  .botones-navegacion {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  #btn-volver {
+    /* Estilos para el objeto con este id */
+    border-left: 4px solid #a00;
+  }
+  #btn-continuar{
+    /* Estilos para el objeto con este id */
+    border-right: 4px solid #a00;
+  }
+  
+  .botones-navegacion button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: transform var(--speed) var(--easing);
+  }
+  
+  .botones-navegacion button:hover {
+    transform: scale(1.1);
+  }
+
+  /*===================================== Estilos en función de la raza =====================================*/
+  /*===================== dwarf =====================*/
+  .raza-dwarf .columna-derecha {
+    border-left: 4px solid rgb(170, 102, 0); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-dwarf .columna-derecha {
+      border-top: 4px solid rgb(170, 102, 0);
+      border-left: none;
+    }
+  }
+  
+  .raza-dwarf .columna-derecha h3 {
+    color: rgb(236, 180, 95); /* orange-red */
+  }
+  
+  .raza-dwarf #btn-volver {
+    border-left: 4px solid rgb(170, 102, 0);
+  }
+  
+  .raza-dwarf #btn-continuar {
+    border-right: 4px solid rgb(170, 102, 0);
+  }
+  /*====================== elf ======================*/
+  .raza-elf .columna-derecha {
+    border-left: 4px solid rgb(77, 170, 0); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-elf .columna-derecha {
+      border-top: 4px solid rgb(77, 170, 0);
+      border-left: none;
+    }
+  }
+  
+  .raza-elf .columna-derecha h3 {
+    color: rgb(158, 238, 93); /* orange-red */
+  }
+  
+  .raza-elf #btn-volver {
+    border-left: 4px solid rgb(77, 170, 0);
+  }
+  
+  .raza-elf #btn-continuar {
+    border-right: 4px solid rgb(77, 170, 0);
+  }
+  /*====================== gnome ======================*/
+  .raza-gnome .columna-derecha {
+    border-left: 4px solid rgb(122, 82, 22); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-gnome .columna-derecha {
+      border-top: 4px solid rgb(122, 82, 22);
+      border-left: none;
+    }
+  }
+  
+  .raza-gnome .columna-derecha h3 {
+    color: rgb(167, 129, 74); /* orange-red */
+  }
+  
+  .raza-gnome #btn-volver {
+    border-left: 4px solid rgb(122, 82, 22);
+  }
+  
+  .raza-gnome #btn-continuar {
+    border-right: 4px solid rgb(122, 82, 22);
+  }
+  /*====================== half-elf ======================*/
+  .raza-halfelf .columna-derecha {
+    border-left: 4px solid rgb(170, 159, 0); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-halfelf .columna-derecha {
+      border-top: 4px solid rgb(170, 159, 0);
+      border-left: none;
+    }
+  }
+  
+  .raza-halfelf .columna-derecha h3 {
+    color: rgb(219, 210, 84); /* orange-red */
+  }
+  
+  .raza-halfelf #btn-volver {
+    border-left: 4px solid rgb(170, 159, 0);
+  }
+  
+  .raza-halfelf #btn-continuar {
+    border-right: 4px solid rgb(170, 159, 0);
+  }
+  /*====================== half-orc ======================*/
+  .raza-halforc .columna-derecha {
+    border-left: 4px solid rgb(73, 48, 11); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-halforc .columna-derecha {
+      border-top: 4px solid rgb(73, 48, 11);
+      border-left: none;
+    }
+  }
+  
+  .raza-halforc .columna-derecha h3 {
+    color: rgb(136, 106, 60); /* orange-red */
+  }
+  
+  .raza-halforc #btn-volver {
+    border-left: 4px solid rgb(73, 48, 11);
+  }
+  
+  .raza-halforc #btn-continuar {
+    border-right: 4px solid rgb(73, 48, 11);
+  }
+  /*====================== halfling ======================*/
+  .raza-halfling .columna-derecha {
+    border-left: 4px solid rgb(119, 170, 0); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-halfling .columna-derecha {
+      border-top: 4px solid rgb(119, 170, 0);
+      border-left: none;
+    }
+  }
+  
+  .raza-halfling .columna-derecha h3 {
+    color: rgb(187, 230, 88); /* orange-red */
+  }
+  
+  .raza-halfling #btn-volver {
+    border-left: 4px solid rgb(119, 170, 0);
+  }
+  
+  .raza-halfling #btn-continuar {
+    border-right: 4px solid rgb(119, 170, 0);
+  }
+  /*====================== human ======================*/
+  .raza-human .columna-derecha {
+    border-left: 4px solid rgb(155, 143, 106); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-human .columna-derecha {
+      border-top: 4px solid rgb(155, 143, 106);
+      border-left: none;
+    }
+  }
+  
+  .raza-human .columna-derecha h3 {
+    color: rgb(207, 194, 152); /* orange-red */
+  }
+  
+  .raza-human #btn-volver {
+    border-left: 4px solid rgb(155, 143, 106);
+  }
+  
+  .raza-human #btn-continuar {
+    border-right: 4px solid rgb(155, 143, 106);
+  }
+  /*====================== tiefling ======================*/
+  .raza-tiefling .columna-derecha {
+    border-left: 4px solid rgb(48, 63, 82); /* firebrick */
+  }
+  
+  @media (max-width: 768px) {
+    .raza-tiefling .columna-derecha {
+      border-top: 4px solid rgb(48, 63, 82);
+      border-left: none;
+    }
+  }
+  
+  .raza-tiefling .columna-derecha h3 {
+    color: rgb(102, 120, 143); /* orange-red */
+  }
+  
+  .raza-tiefling #btn-volver {
+    border-left: 4px solid rgb(48, 63, 82);
+  }
+  
+  .raza-tiefling #btn-continuar {
+    border-right: 4px solid rgb(48, 63, 82);
   }

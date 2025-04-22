@@ -44,12 +44,26 @@ function mostrarDatosDeRaza(data) {
     case 'gnome':
       renderGnome(data);
       break;
-    // y así con las demás razas
+    case 'half-elf':
+      renderHalfElf(data);
+      break;
+    case 'half-orc':
+      renderHalfOrc(data);
+      break;
+    case 'halfling':
+      renderHalfling(data);
+      break;
+    case 'human':
+      renderHuman(data);
+      break;
+    case 'tiefling':
+      renderTiefling(data);
+      break;
     default:
       renderGenerico(data);
   }
 }
-/*======= Función para la inyección del código de la raza dragonborn =======*/
+/*======= inyección dragonborn =======*/
 function renderDragonborn(data) {
   const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
   const idiomas = data.languages.map(l => l.name).join(', ');
@@ -80,7 +94,7 @@ function renderDragonborn(data) {
     </div>
   `;
 }
-/*======= Función para la inyección del código de la raza dwarf =======*/
+/*======= inyección dwarf =======*/
 function renderDwarf(data) {
   const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
   const idiomas = data.languages.map(l => l.name).join(', ');
@@ -120,7 +134,7 @@ function renderDwarf(data) {
     </div>
   `;
 }
-/*======= Función para la inyección del código de la raza elf =======*/
+/*======= inyección elf =======*/
 function renderElf(data) {
   const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
   const idiomas = data.languages.map(l => l.name).join(', ');
@@ -156,7 +170,7 @@ function renderElf(data) {
     </div>
   `;
 }
-/*======= Función para la inyección del código de la raza gnome =======*/
+/*======= inyección gnome =======*/
 function renderGnome(data) {
   const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
   const idiomas = data.languages.map(l => l.name).join(', ');
@@ -190,6 +204,194 @@ function renderGnome(data) {
     </div>
   `;
 }
+/*======= inyección half-elf =======*/
+function renderHalfElf(data) {
+  const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
+  const idiomas = data.languages.map(l => l.name).join(', ');
+  const rasgos = data.traits.map(t => t.name).join(', ');
+
+  // Opción de idiomas adicionales
+  const idiomasExtra = data.language_options.from.options.map(
+    opt => `<option value="${opt.item.index}">${opt.item.name}</option>`
+  ).join('');
+
+  // Opciones para habilidad +1 x2 (STR, DEX, etc.)
+  const statsOpcionales = data.ability_bonus_options.from.options.map(
+    opt => `<option value="${opt.ability_score.index}">${opt.ability_score.name} +1</option>`
+  ).join('');
+
+  // Opciones de habilidades para elegir 2
+  const habilidadesOpcionales = data.starting_proficiency_options.from.options.map(
+    opt => `<option value="${opt.item.index}">${opt.item.name}</option>`
+  ).join('');
+
+  vistaRaza.innerHTML = `
+    <div class="contenedor-razas">
+      <div class="columna-izquierda">
+        <h2>${data.name}</h2>
+        <p><strong>Edad:</strong> ${data.age}</p>
+        <p><strong>Tamaño:</strong> ${data.size_description}</p>
+        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
+        <p><strong>Bonificador fijo:</strong> ${habilidades}</p>
+        <p><strong>Bonificadores adicionales:</strong></p>
+        <select id="select-stat-extra-1">${statsOpcionales}</select>
+        <select id="select-stat-extra-2">${statsOpcionales}</select>
+
+        <p><strong>Habilidades a elegir (elige 2):</strong></p>
+        <select id="select-skill-1">${habilidadesOpcionales}</select>
+        <select id="select-skill-2">${habilidadesOpcionales}</select>
+
+        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Idioma adicional:</strong>
+          <select id="select-idioma-extra">${idiomasExtra}</select>
+        </p>
+        <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
+        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Alineamiento:</strong>
+          <select id="select-alineamiento"></select>
+        </p>
+      </div>
+      <div class="columna-derecha">
+        <h3>${data.name}</h3>
+        <p id="parrafo-roleplay">
+          Divididos entre dos mundos, los medio-elfos combinan la agudeza élfica con la versatilidad humana. Inadaptables para algunos y únicos para otros, su identidad fluye entre la libertad y la dualidad de su herencia.
+        </p>
+      </div>
+    </div>
+  `;
+}
+/*======= inyección half-orc =======*/
+function renderHalfOrc(data) {
+  const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
+  const idiomas = data.languages.map(l => l.name).join(', ');
+  const rasgos = data.traits.map(t => t.name).join(', ');
+  const habilidadesIniciales = data.starting_proficiencies.map(p => p.name).join(', ');
+
+  vistaRaza.innerHTML = `
+    <div class="contenedor-razas">
+      <div class="columna-izquierda">
+        <h2>${data.name}</h2>
+        <p><strong>Edad:</strong> ${data.age}</p>
+        <p><strong>Tamaño:</strong> ${data.size_description}</p>
+        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
+        <p><strong>Bonificadores:</strong> ${habilidades}</p>
+        <p><strong>Habilidad inicial:</strong> ${habilidadesIniciales}</p>
+        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
+        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Alineamiento:</strong>
+          <select id="select-alineamiento"></select>
+        </p>
+      </div>
+      <div class="columna-derecha">
+        <h3>${data.name}</h3>
+        <p id="parrafo-roleplay">
+          Nacidos entre la brutalidad y la voluntad, los Half-Orcs son guerreros temidos y supervivientes natos. Su determinación es tan fuerte como su físico, y su presencia impone respeto o miedo allá donde vayan.
+        </p>
+      </div>
+    </div>
+  `;
+}
+/*======= inyección halfling =======*/
+function renderHalfling(data) {
+  const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
+  const idiomas = data.languages.map(l => l.name).join(', ');
+  const rasgos = data.traits.map(t => t.name).join(', ');
+  const subrazas = data.subraces.map(sr => `<option value="${sr.index}">${sr.name}</option>`).join('');
+
+  vistaRaza.innerHTML = `
+    <div class="contenedor-razas">
+      <div class="columna-izquierda">
+        <h2>${data.name}</h2>
+        <p><strong>Edad:</strong> ${data.age}</p>
+        <p><strong>Tamaño:</strong> ${data.size_description}</p>
+        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
+        <p><strong>Bonificadores:</strong> ${habilidades}</p>
+        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
+        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Subraza:</strong>
+          <select id="select-subraza">${subrazas}</select>
+        </p>
+        <p><strong>Alineamiento:</strong>
+          <select id="select-alineamiento"></select>
+        </p>
+      </div>
+      <div class="columna-derecha">
+        <h3>${data.name}</h3>
+        <p id="parrafo-roleplay">
+          Pequeños en tamaño, enormes en corazón. Los Halflings caminan sin hacer ruido pero con paso firme, llevando con ellos risas, esperanza y una sorprendente capacidad para encontrar la suerte incluso en los momentos más oscuros.
+        </p>
+      </div>
+    </div>
+  `;
+}
+/*======= inyección human =======*/
+function renderHuman(data) {
+  const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
+  const idiomas = data.languages.map(l => l.name).join(', ');
+  const idiomasExtra = data.language_options.from.options.map(
+    opt => `<option value="${opt.item.index}">${opt.item.name}</option>`
+  ).join('');
+
+  vistaRaza.innerHTML = `
+    <div class="contenedor-razas">
+      <div class="columna-izquierda">
+        <h2>${data.name}</h2>
+        <p><strong>Edad:</strong> ${data.age}</p>
+        <p><strong>Tamaño:</strong> ${data.size_description}</p>
+        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
+        <p><strong>Bonificadores:</strong> ${habilidades}</p>
+        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Idioma adicional:</strong>
+          <select id="select-idioma-extra">${idiomasExtra}</select>
+        </p>
+        <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
+        <p><strong>Alineamiento:</strong>
+          <select id="select-alineamiento"></select>
+        </p>
+      </div>
+      <div class="columna-derecha">
+        <h3>${data.name}</h3>
+        <p id="parrafo-roleplay">
+          Adaptables, diversos e impredecibles, los humanos no destacan por una característica específica, sino por su capacidad para brillar en cualquier ámbito. Su potencial ilimitado ha hecho que prosperen en cada rincón del mundo conocido.
+        </p>
+      </div>
+    </div>
+  `;
+}
+/*======= inyección tiefling =======*/
+function renderTiefling(data) {
+  const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
+  const idiomas = data.languages.map(l => l.name).join(', ');
+  const rasgos = data.traits.map(t => t.name).join(', ');
+
+  vistaRaza.innerHTML = `
+    <div class="contenedor-razas">
+      <div class="columna-izquierda">
+        <h2>${data.name}</h2>
+        <p><strong>Edad:</strong> ${data.age}</p>
+        <p><strong>Tamaño:</strong> ${data.size_description}</p>
+        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
+        <p><strong>Bonificadores:</strong> ${habilidades}</p>
+        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
+        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Alineamiento:</strong>
+          <select id="select-alineamiento"></select>
+        </p>
+      </div>
+      <div class="columna-derecha">
+        <h3>${data.name}</h3>
+        <p id="parrafo-roleplay">
+          Los Tieflings caminan entre planos con la marca del infierno sobre su sangre. A menudo incomprendidos o temidos, son espíritus fuertes que desafían su oscuro linaje y esculpen su destino con astucia, poder y una voluntad inquebrantable.
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+
 
 
 async function cargarAlineamientos() {

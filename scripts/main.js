@@ -59,3 +59,22 @@ window.addEventListener('load', () => {
 })
 
 resync()
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const editLinks = document.querySelectorAll(".edit-btn");
+
+  editLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const li = e.target.closest("li");
+      const raza = li?.dataset?.raza;
+
+      if (raza) {
+        window.location.href = `edit.html?raza=${encodeURIComponent(raza)}`;
+      }
+    });
+  });
+});

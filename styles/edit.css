@@ -1,0 +1,97 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #raza-info {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contenedor-razas {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .columna-izquierda,
+  .columna-derecha {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .columna-derecha {
+    border-left: 4px solid #a00;
+  }
+  
+  .columna-izquierda h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+  
+  .columna-izquierda p,
+  .columna-derecha p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    color: #ddd;
+  }
+  
+  select {
+    margin-top: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    font-size: 1rem;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .columna-derecha h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #f55;
+  }
+  
+  @media (max-width: 768px) {
+    .contenedor-razas {
+      flex-direction: column;
+    }
+  
+    .columna-derecha {
+      border-left: none;
+      border-top: 4px solid #a00;
+      margin-top: 1.5rem;
+    }
+  }

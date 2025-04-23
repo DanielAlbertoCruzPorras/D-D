@@ -1,48 +1,48 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Editar Personaje - Clase</title>
-  <link rel="stylesheet" href="../styles/edit.css" />
-</head>
-<body>
-  <h1>Forja de Héroes - Clase</h1>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Editar Personaje - Clase</title>
+    <link rel="stylesheet" href="../styles/edit.css" />
+  </head>
+  <body>
+    <h1>Forja de Héroes - Clase</h1>
 
-  <div class="contenedor-razas" id="vista-clase">
-    <div class="columna-izquierda">
-        <label for="select-clase"><strong>Clase:</strong></label>
-        <select id="select-clase">
-          <option value="barbarian" selected>Barbarian</option>
-          <option value="bard">Bard</option>
-          <option value="cleric">Cleric</option>
-          <option value="druid">Druid</option>
-          <option value="fighter">Fighter</option>
-          <option value="monk">Monk</option>
-          <option value="paladin">Paladin</option>
-          <option value="ranger">Ranger</option>
-          <option value="rogue">Rogue</option>
-          <option value="sorcerer">Sorcerer</option>
-          <option value="warlock">Warlock</option>
-          <option value="wizard">Wizard</option>
-        </select>     
-      <p><strong>Dado de golpe:</strong> <span id="hit-die">-</span></p>
-      <p><strong>Competencias:</strong> <span id="proficiencies">-</span></p>
+    <div class="contenedor-razas" id="vista-clase">
+      <div class="columna-izquierda">
+          <label for="select-clase"><strong>Clase:</strong></label>
+          <select id="select-clase">
+            <option value="barbarian" selected>Barbarian</option>
+            <option value="bard">Bard</option>
+            <option value="cleric">Cleric</option>
+            <option value="druid">Druid</option>
+            <option value="fighter">Fighter</option>
+            <option value="monk">Monk</option>
+            <option value="paladin">Paladin</option>
+            <option value="ranger">Ranger</option>
+            <option value="rogue">Rogue</option>
+            <option value="sorcerer">Sorcerer</option>
+            <option value="warlock">Warlock</option>
+            <option value="wizard">Wizard</option>
+          </select>     
+        <p><strong>Dado de golpe:</strong> <span id="hit-die">-</span></p>
+        <p><strong>Competencias:</strong> <span id="proficiencies">-</span></p>
+      </div>
+
+      <div class="columna-derecha">
+        <h3 id="nombre-clase">Clase</h3>
+        <p id="descripcion-clase">
+          Selecciona una clase para ver su descripción detallada y su esencia en el mundo de juego.
+        </p>
+      </div>
     </div>
 
-    <div class="columna-derecha">
-      <h3 id="nombre-clase">Clase</h3>
-      <p id="descripcion-clase">
-        Selecciona una clase para ver su descripción detallada y su esencia en el mundo de juego.
-      </p>
+    <div class="botones-navegacion">
+      <button id="btn-volver">VOLVER</button>
+      <button id="btn-continuar">CONTINUAR</button>
     </div>
-  </div>
 
-  <div class="botones-navegacion">
-    <button id="btn-volver">VOLVER</button>
-    <button id="btn-continuar">CONTINUAR</button>
-  </div>
-
-  <script src="../scripts/class.js"></script>
-</body>
-</html>
+    <script src="../scripts/class.js"></script>
+  </body>
+  </html>

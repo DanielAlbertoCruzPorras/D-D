@@ -453,20 +453,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnVolver = document.getElementById('btn-volver');
   const btnContinuar = document.getElementById('btn-continuar');
 
-  if (btnVolver) {
-    btnVolver.addEventListener('click', () => {
-      // Por ahora volvemos al index
-      window.location.href = 'index.html';
-    });
-  }
+  document.getElementById('btn-volver').addEventListener('click', () => {
+    // Por ahora volvemos al index
+    window.location.href = 'index.html';
+  });
 
-  if (btnContinuar) {
-    btnContinuar.addEventListener('click', () => {
-      // Más adelante redirigimos a la vista de clase
-      const raza = razaSeleccionada || 'unknown';
-      window.location.href = `class.html?raza=${encodeURIComponent(raza)}&paso=clase`;
-    });
-  }
+  document.getElementById('btn-continuar').addEventListener('click', () => {
+    // Más adelante redirigimos a la vista de clase
+    const raza = razaSeleccionada || 'unknown';
+    
+    window.location.href = `class.html?raza=${encodeURIComponent(raza)}&paso=clase`;
+  });
+
 });
 
 

@@ -20,22 +20,23 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.backgroundImage = img;
     }
     aplicarFondoPorRaza(razaSeleccionada);
+    
     const selectClase = document.getElementById("select-clase");
   
     // Cargar lista de clases disponibles
     fetch("https://www.dnd5eapi.co/api/2014/classes")
-      .then(res => res.json())
-      .then(data => {
-        data.results.forEach(clase => {
-          const option = document.createElement("option");
-          option.value = clase.index;
-          option.textContent = clase.name;
-          selectClase.appendChild(option);
+        .then(res => res.json())
+        .then(data => {
+            data.results.forEach(clase => {
+            const option = document.createElement("option");
+            option.value = clase.index;
+            option.textContent = clase.name;
+            selectClase.appendChild(option);
+            });
+    
+            // Renderizar la primera clase por defecto
+            cargarInfoClase(selectClase.value);
         });
-  
-        // Renderizar la primera clase por defecto
-        cargarInfoClase(selectClase.value);
-      });
   
     // Cambiar clase seleccionada
     selectClase.addEventListener("change", () => {
@@ -44,11 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Función para cargar datos específicos de una clase
     function cargarInfoClase(index) {
-      fetch(`https://www.dnd5eapi.co/api/2014/classes/${index}`)
-        .then(res => res.json())
-        .then(data => {
-          mostrarDatosDeClase(data);
-        });
+        fetch(`https://www.dnd5eapi.co/api/2014/classes/${index}`)
+            .then(res => res.json())
+            .then(data => {
+            mostrarDatosDeClase(data);
+            });
     }
   
 /*=================== Switch para inyectar el código de la respectiva clase ===================*/
@@ -786,7 +787,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }  
       
-  
     // Botón VOLVER
     document.getElementById("btn-volver").addEventListener("click", () => {
       history.back();
@@ -794,10 +794,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Botón CONTINUAR
     document.getElementById("btn-continuar").addEventListener("click", () => {
-      const clase = selectClase.value || "unknown";
-      window.location.href = `background.html?clase=${encodeURIComponent(clase)}&paso=trasfondo`;
+        const raza = razaSeleccionada || 'unknown';
+        const clase = document.getElementById("select-clase")?.value || "unknown";
+        window.location.href = `final.html?raza=${encodeURIComponent(raza)}&clase=${encodeURIComponent(clase)}&paso=final`;
     });
-  });
+      
+
+});
   
 
   

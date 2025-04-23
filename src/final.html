@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forja de Héroes - Características y Biografía</title>
+    <link rel="stylesheet" href="../styles/edit.css">
+</head>
+<body>
+    <h1>Forja de Héroes - Características y Biografía</h1>
+    <div class="contenedor-razas" id="vista-final">
+        <div class="columna-izquierda">
+        <h2>Características</h2>
+        <div class="caracteristica">
+            <label>Fuerza (STR)</label>
+            <button onclick="tirarDados('fuerza')">🎲</button>
+            <span id="fuerza">-</span>
+        </div>
+        <div class="caracteristica">
+            <label>Destreza (DEX)</label>
+            <button onclick="tirarDados('destreza')">🎲</button>
+            <span id="destreza">-</span>
+        </div>
+        <div class="caracteristica">
+            <label>Constitución (CON)</label>
+            <button onclick="tirarDados('constitucion')">🎲</button>
+            <span id="constitucion">-</span>
+        </div>
+        <div class="caracteristica">
+            <label>Inteligencia (INT)</label>
+            <button onclick="tirarDados('inteligencia')">🎲</button>
+            <span id="inteligencia">-</span>
+        </div>
+        <div class="caracteristica">
+            <label>Sabiduría (WIS)</label>
+            <button onclick="tirarDados('sabiduria')">🎲</button>
+            <span id="sabiduria">-</span>
+        </div>
+        <div class="caracteristica">
+            <label>Carisma (CHA)</label>
+            <button onclick="tirarDados('carisma')">🎲</button>
+            <span id="carisma">-</span>
+        </div>
+        </div>
+
+        <div class="columna-derecha">
+        <h2>Biografía</h2>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre">
+            </div>
+            <div>
+                <label for="edad">Edad</label>
+                <input type="number" id="edad">
+            </div>
+            <div>
+                <label for="altura">Altura</label>
+                <input type="text" id="altura">
+            </div>
+            <div>
+                <label for="peso">Peso</label>
+                <input type="text" id="peso">
+            </div>
+            <div>
+                <label for="cabello">Color de cabello</label>
+                <input type="text" id="cabello">
+            </div>
+        </div>
+    </div>
+
+    <div class="botones-navegacion">
+        <button id="btn-volver">Volver</button>
+        <button id="btn-continuar">Guardar Personaje</button>
+    </div>
+
+    <script src="../scripts/final.js"></script>
+</body>
+</html>

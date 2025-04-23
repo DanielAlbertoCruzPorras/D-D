@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnContinuar.addEventListener('click', () => {
       // Más adelante redirigimos a la vista de clase
       const raza = razaSeleccionada || 'unknown';
-      window.location.href = `class.html?raza=${encodeURIComponent(raza)}`;
+      window.location.href = `class.html?raza=${encodeURIComponent(raza)}&paso=clase`;
     });
   }
 });

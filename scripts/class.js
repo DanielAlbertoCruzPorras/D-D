@@ -116,17 +116,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <label for="select-clase"><strong>Clase:</strong></label>
           <select id="select-clase"></select>
       
-          <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-          <p><strong>Competencias:</strong> ${competencias}</p>
-          <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
       
           <p><strong>Selecciona 2 habilidades:</strong></p>
           <select id="skill-1">${habilidadesOpcionales}</select>
           <select id="skill-2">${habilidadesOpcionales}</select>
       
-          <p><strong>Equipo:</strong> ${equipoFijo} and (any martial weapon) and (Handaxe (2) or any simple weapon)</p>
+          <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (any martial weapon) and (Handaxe (2) or any simple weapon)</span></p>
       
-          <p><strong>Subclases:</strong> ${subclases}</p>
+          <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
       
         columnaDerecha.innerHTML = `
@@ -178,9 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 3 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
@@ -192,9 +192,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <select id="instrumento-2">${instrumentos}</select>
         <select id="instrumento-3">${instrumentos}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a rapier, a longsword, or any simple weapon) and (a diplomat’s pack or an entertainer’s pack) and (a lute or any other musical instrument)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a rapier, a longsword, or any simple weapon) and (a diplomat’s pack or an entertainer’s pack) and (a lute or any other musical instrument)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -240,17 +240,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a mace or a warhammer if proficient), (scale mail, leather armor, or chain mail if proficient), (light crossbow and 20 bolts or any simple weapon), (priest’s pack or explorer’s pack), (holy symbol)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a mace or a warhammer if proficient), (scale mail, leather armor, or chain mail if proficient), (light crossbow and 20 bolts or any simple weapon), (priest’s pack or explorer’s pack), (holy symbol)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -296,17 +296,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a wooden shield or any simple weapon), (a scimitar or any simple melee weapon), (druidic focus)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a wooden shield or any simple weapon), (a scimitar or any simple melee weapon), (druidic focus)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -352,17 +352,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (chain mail or leather armor, longbow, and 20 arrows), (a martial weapon and a shield or two martial weapons), (a light crossbow and 20 bolts or two handaxes), (a dungeoneer’s pack or an explorer’s pack)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (chain mail or leather armor, longbow, and 20 arrows), (a martial weapon and a shield or two martial weapons), (a light crossbow and 20 bolts or two handaxes), (a dungeoneer’s pack or an explorer’s pack)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -408,17 +408,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a shortsword or any simple weapon), (a dungeoneer’s pack or an explorer’s pack)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a shortsword or any simple weapon), (a dungeoneer’s pack or an explorer’s pack)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -464,17 +464,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a martial weapon and a shield or two martial weapons), (five javelins or any simple melee weapon), (a priest’s pack or an explorer’s pack), (holy symbol)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a martial weapon and a shield or two martial weapons), (five javelins or any simple melee weapon), (a priest’s pack or an explorer’s pack), (holy symbol)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -520,18 +520,18 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 3 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
         <select id="skill-3">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (scale mail or leather armor), (two shortswords or two simple melee weapons), (a dungeoneer’s pack or an explorer’s pack)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (scale mail or leather armor), (two shortswords or two simple melee weapons), (a dungeoneer’s pack or an explorer’s pack)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -577,9 +577,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 4 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
@@ -587,9 +587,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <select id="skill-3">${habilidades}</select>
         <select id="skill-4">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a rapier or a shortsword), (a shortbow and quiver of 20 arrows or a shortsword), (a burglar’s pack, a dungeoneer’s pack, or an explorer’s pack)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a rapier or a shortsword), (a shortbow and quiver of 20 arrows or a shortsword), (a burglar’s pack, a dungeoneer’s pack, or an explorer’s pack)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -635,17 +635,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a light crossbow and 20 bolts or any simple weapon), (a component pouch or an arcane focus), (a dungeoneer’s pack or an explorer’s pack)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a light crossbow and 20 bolts or any simple weapon), (a component pouch or an arcane focus), (a dungeoneer’s pack or an explorer’s pack)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -691,17 +691,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a light crossbow and 20 bolts or any simple weapon), (a component pouch or an arcane focus), (a scholar’s pack or a dungeoneer’s pack), and (any simple weapon)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a light crossbow and 20 bolts or any simple weapon), (a component pouch or an arcane focus), (a scholar’s pack or a dungeoneer’s pack), and (any simple weapon)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -731,6 +731,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }  
 /*======= Función específica para la clase Wizard =======*/
+/*
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias"> ${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones"> ${salvaciones}</span></p>
+*/
     function renderWizard(data) {
         const habilidades = data.proficiency_choices[0].from.options.map(
         opt => `<option value="${opt.item.index}">${opt.item.name}</option>`
@@ -748,17 +753,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <label for="select-clase"><strong>Clase:</strong></label>
         <select id="select-clase"></select>
     
-        <p><strong>Dado de Golpe:</strong> d${data.hit_die}</p>
-        <p><strong>Competencias:</strong> ${competencias}</p>
-        <p><strong>Salvaciones:</strong> ${salvaciones}</p>
+        <p><strong>Dado de Golpe:</strong> <span id="dado-golpe"> d${data.hit_die}</span></p>
+        <p><strong>Competencias:</strong> <span id="competencias">${competencias}</span></p>
+        <p><strong>Salvaciones:</strong> <span id="salvaciones">${salvaciones}</span></p>
     
         <p><strong>Selecciona 2 habilidades:</strong></p>
         <select id="skill-1">${habilidades}</select>
         <select id="skill-2">${habilidades}</select>
     
-        <p><strong>Equipo:</strong> ${equipoFijo} and (a quarterstaff or a dagger), (a component pouch or an arcane focus), (a scholar’s pack or an explorer’s pack)</p>
+        <p><strong>Equipo:</strong> <span id="equipo">${equipoFijo} and (a quarterstaff or a dagger), (a component pouch or an arcane focus), (a scholar’s pack or an explorer’s pack)</span></p>
     
-        <p><strong>Subclases:</strong> ${subclases}</p>
+        <p><strong>Subclases:</strong> <span id="subclase">${subclases}</span></p>
         `;
     
         columnaDerecha.innerHTML = `
@@ -796,9 +801,44 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-continuar").addEventListener("click", () => {
         const raza = razaSeleccionada || 'unknown';
         const clase = document.getElementById("select-clase")?.value || "unknown";
+    
+        const dadoGolpe = document.getElementById("dado-golpe")?.textContent.trim() || null;
+        const salvaciones = document.getElementById("salvaciones")?.textContent.trim() || null;
+        const competencias = document.getElementById("competencias")?.textContent.trim() || null;
+    
+        const habilidadesSeleccionadas = [
+            document.getElementById("skill-1")?.value || null,
+            document.getElementById("skill-2")?.value || null,
+            document.getElementById("skill-3")?.value || null,
+            document.getElementById("skill-4")?.value || null
+        ];
+        const instrumentosSeleccionados = [
+            document.getElementById("instrumento-1")?.value || null,
+            document.getElementById("instrumento-2")?.value || null,
+            document.getElementById("instrumento-3")?.value || null,
+            document.getElementById("instrumento-4")?.value || null
+        ];
+    
+        const equipo = document.getElementById("equipo")?.textContent.trim() || null;
+        const subclase = document.getElementById("subclase")?.textContent.trim() || null;
+    
+        const personaje = JSON.parse(localStorage.getItem("personaje")) || {};
+        personaje.clase = clase;
+        personaje.dado_golpe = dadoGolpe;
+        personaje.salvaciones = salvaciones;
+        personaje.competencias = competencias;
+        personaje.habilidades.push(habilidadesSeleccionadas);
+        personaje.habilidades = personaje.habilidades.filter(item => item !== null); /* Para eliminar null */
+        personaje.instrumentos = instrumentosSeleccionados;
+        personaje.instrumentos = personaje.instrumentos.filter(item => item !== null);
+        personaje.equipo = equipo;
+        personaje.subclase = subclase;
+    
+        localStorage.setItem("personaje", JSON.stringify(personaje));
+        console.log("Personaje actualizado:", personaje);
+    
         window.location.href = `final.html?raza=${encodeURIComponent(raza)}&clase=${encodeURIComponent(clase)}&paso=final`;
     });
-      
 
 });
   

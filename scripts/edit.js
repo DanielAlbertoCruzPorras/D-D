@@ -63,6 +63,7 @@ function mostrarDatosDeRaza(data) {
       renderGenerico(data);
   }
 }
+
 /*======= inyección dragonborn =======*/
 function renderDragonborn(data) {
   const habilidades = data.ability_bonuses.map(b => `${b.ability_score.name} +${b.bonus}`).join(', ');
@@ -75,11 +76,11 @@ function renderDragonborn(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores de Característica:</strong> ${habilidades}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Alineamiento:</strong>
           <select id="select-alineamiento"></select>
         </p>
@@ -111,11 +112,11 @@ function renderDwarf(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Armas iniciales:</strong> ${armas}</p>
         <p><strong>Herramienta de artesano:</strong>
           <select id="select-herramienta">${herramientas}</select>
@@ -148,12 +149,12 @@ function renderElf(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
         <p><strong>Habilidad inicial:</strong> ${habilidadesIniciales}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Subraza:</strong>
           <select id="select-subraza">${subrazas}</select>
         </p>
@@ -183,11 +184,11 @@ function renderGnome(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Subraza:</strong>
           <select id="select-subraza">${subrazas}</select>
         </p>
@@ -231,8 +232,8 @@ function renderHalfElf(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificador fijo:</strong> ${habilidades}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
         <p><strong>Bonificadores adicionales:</strong></p>
         <select id="select-stat-extra-1">${statsOpcionales}</select>
         <select id="select-stat-extra-2">${statsOpcionales}</select>
@@ -241,12 +242,12 @@ function renderHalfElf(data) {
         <select id="select-skill-1">${habilidadesOpcionales}</select>
         <select id="select-skill-2">${habilidadesOpcionales}</select>
 
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Idioma adicional:</strong>
           <select id="select-idioma-extra">${idiomasExtra}</select>
         </p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Alineamiento:</strong>
           <select id="select-alineamiento"></select>
         </p>
@@ -273,12 +274,12 @@ function renderHalfOrc(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
         <p><strong>Habilidad inicial:</strong> ${habilidadesIniciales}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Alineamiento:</strong>
           <select id="select-alineamiento"></select>
         </p>
@@ -305,11 +306,11 @@ function renderHalfling(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Subraza:</strong>
           <select id="select-subraza">${subrazas}</select>
         </p>
@@ -340,9 +341,9 @@ function renderHuman(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Idioma adicional:</strong>
           <select id="select-idioma-extra">${idiomasExtra}</select>
         </p>
@@ -372,11 +373,11 @@ function renderTiefling(data) {
         <h2>${data.name}</h2>
         <p><strong>Edad:</strong> ${data.age}</p>
         <p><strong>Tamaño:</strong> ${data.size_description}</p>
-        <p><strong>Velocidad:</strong> ${data.speed} ft</p>
-        <p><strong>Bonificadores:</strong> ${habilidades}</p>
-        <p><strong>Idiomas:</strong> ${idiomas}</p>
+        <p><strong>Velocidad:</strong> <span id="velocidad">${data.speed}</span> ft</p>
+        <p><strong>Bonificadores:</strong> <span id="bonificadores">${habilidades}</span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas">${idiomas}</span></p>
         <p><strong>Descripción de idiomas:</strong> ${data.language_desc}</p>
-        <p><strong>Rasgos:</strong> ${rasgos}</p>
+        <p><strong>Rasgos:</strong> <span id="rasgos">${rasgos}</span></p>
         <p><strong>Alineamiento:</strong>
           <select id="select-alineamiento"></select>
         </p>
@@ -450,8 +451,6 @@ function aplicarFondoPorRaza(raza) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const btnVolver = document.getElementById('btn-volver');
-  const btnContinuar = document.getElementById('btn-continuar');
 
   document.getElementById('btn-volver').addEventListener('click', () => {
     // Por ahora volvemos al index
@@ -461,7 +460,51 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-continuar').addEventListener('click', () => {
     // Más adelante redirigimos a la vista de clase
     const raza = razaSeleccionada || 'unknown';
-    
+
+    const alineamiento = document.getElementById("select-alineamiento")?.value || null;
+    const velocidad = document.getElementById("velocidad")?.textContent || null;
+    const idiomas = document.getElementById("idiomas")?.textContent || null;
+    /*
+    const idiomasplus = [
+      document.getElementById("idiomasplus-1")?.value || null,
+      document.getElementById("idiomasplus-2")?.value || null
+    ];
+    */
+    const rasgos = document.getElementById("rasgos")?.textContent || null;
+    const subraza = document.getElementById("select-subraza")?.value || null;
+    const idioma_extra = document.getElementById("select-idioma-extra")?.value || null;
+
+    const habilidadesSeleccionadas = [
+      document.getElementById("select-skill-1")?.value || null,
+      document.getElementById("select-skill-2")?.value || null,
+      document.getElementById("select-skill-3")?.value || null,
+      document.getElementById("select-skill-4")?.value || null
+    ];
+
+    const stat_extra_1 = document.getElementById("select-stat-extra-1")?.value || null;
+    const stat_extra_2 = document.getElementById("select-stat-extra-2")?.value || null;
+    const bonificadores = document.getElementById("bonificadores")?.textContent || null;
+
+    const personaje = JSON.parse(localStorage.getItem("personaje")) || {};
+    personaje.raza = raza;
+    /* id="velocidad" id="idiomas" id="rasgos" */
+    personaje.velocidad = velocidad;
+    personaje.idiomas = idiomas;
+    /*
+    personaje.idiomasplus = idiomasplus;
+    */
+    personaje.rasgos = rasgos;
+    personaje.alineamiento = alineamiento;
+    personaje.subraza = subraza;
+    personaje.habilidades = habilidadesSeleccionadas;
+    personaje.idioma_extra = idioma_extra;
+    personaje.stat_extra_1 = stat_extra_1;
+    personaje.stat_extra_2 = stat_extra_2;
+    personaje.bonificadores = bonificadores;
+
+    localStorage.setItem("personaje", JSON.stringify(personaje));
+    console.log("Personaje guardado:", personaje);
+
     window.location.href = `class.html?raza=${encodeURIComponent(raza)}&paso=clase`;
   });
 

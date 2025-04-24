@@ -82,8 +82,26 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("res-equipo").textContent = p.equipo || "No aplica";
         document.getElementById("res-subclase").textContent = p.subclase || "Ninguna subclase";
         }
+        
+        const vistaTitle = document.getElementById('title');
+        const name = p.nombre || "Personaje";
+        function renderTitle(name) {
+        
+            vistaTitle.innerHTML = `
+                <h2>${name}</h2>
+            `;
+        };
+        renderTitle(name);
+        const imagenPersonaje = document.getElementById("imagen-personaje");
+
+        if (imagenPersonaje && p.raza) {
+        const nombreImagen = p.raza.toLowerCase().replace(/\s/g, "-")+"PJ"; // reemplaza espacios si los hay
+        imagenPersonaje.src = `../assets/img/${nombreImagen}.png`;
+        }
 
     });
+    
+
 });
 
 function tirarDados(caracteristicaId) {

@@ -4,12 +4,6 @@ document.documentElement.dataset.theme = 'dark'
 const list = document.querySelector('ul')
 const items = list.querySelectorAll('li')
 const setIndex = (event) => {
-  // for flex
-  // if (event.target.closest('li'))
-  //   for (const item of items)
-  //     item.dataset.active =
-  //       item === event.target.closest('li') ? 'true' : 'false'
-  // for grid
   const closest = event.target.closest('li')
   if (closest) {
     const index = [...items].indexOf(closest)
@@ -77,4 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+
+document.getElementById("btn-listar-personajes").addEventListener("click", () => {
+  window.location.href = "../src/list.html";
 });

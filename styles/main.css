@@ -439,3 +439,27 @@
   transform: scale(1.1);
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* Sombra blanca suave y circular */
 }
+
+
+/* Estilo del botón flotante */
+.fixed-bottom-left {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid rgb(48, 63, 82);
+  border-left: none;
+}
+
+.fixed-bottom-left:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
+}

@@ -99,6 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
         imagenPersonaje.src = `../assets/img/${nombreImagen}.png`;
         }
 
+        fetch('https://680ac229d5075a76d988e388.mockapi.io/Dungeons/Personajes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(personaje)
+          })
+          .then(res => res.json())
+          .then(data => console.log("Guardado:", data))
+          .catch(err => console.error("Error:", err));
     });
     
 
@@ -108,3 +116,7 @@ function tirarDados(caracteristicaId) {
     const resultado = Math.floor(Math.random() * 6 + 1) + Math.floor(Math.random() * 6 + 1);
     document.getElementById(caracteristicaId).textContent = resultado;
 }
+
+document.getElementById("gohome").addEventListener("click", () => {
+    window.location.href = "../src/index.html";
+});

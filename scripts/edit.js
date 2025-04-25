@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('btn-volver').addEventListener('click', () => {
     // Por ahora volvemos al index
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
   });
 
   document.getElementById('btn-continuar').addEventListener('click', () => {

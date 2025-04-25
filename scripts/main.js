@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const raza = li?.dataset?.raza;
 
       if (raza) {
-        window.location.href = `edit.html?raza=${encodeURIComponent(raza)}`;
+        window.location.href = `src/edit.html?raza=${encodeURIComponent(raza)}`;
       }
     });
   });
@@ -75,5 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.getElementById("btn-listar-personajes").addEventListener("click", () => {
-  window.location.href = "../src/list.html";
+  window.location.href = "src/list.html";
 });

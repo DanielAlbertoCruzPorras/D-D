@@ -83,11 +83,11 @@ Cada personaje es guardado como un objeto JSON y puede visualizarse desde `list.
 
 ## 🚀 Cómo usar
 
-# Opción 1:
+### Opción 1:
 
 - Simplemente accede desde el enlace de GitHub pages en el presente repositorio. 💯💯
 
-# Opción 2:
+### Opción 2:
 
 1. Clona este repositorio o descarga el ZIP.
 2. Abre `src/index.html` en tu navegador.
